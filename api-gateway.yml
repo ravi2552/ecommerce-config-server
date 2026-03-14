@@ -1,4 +1,5 @@
 #api gateway config
+spring:
   cloud:
     gateway:
       routes:
