@@ -11,10 +11,10 @@ spring:
             - StripPrefix=2
 #            - RedirectTo=302, http://codingshuttle.com
             - name: LoggingOrdersFilter
-            - name: Authentication
+            - name: AuthenticationGatewayFilterFactory
               args:
                 authenticationEnabled: true
-            - name: Authorization
+            - name: AuthenticationGatewayFilterFactory
               args:
                 allowedRoles: USER,ADMIN,SUPER_ADMIN
         - id: inventory-service
@@ -24,10 +24,10 @@ spring:
           filters:
             - StripPrefix=2
             - AddRequestHeader=X-Custom-Header, Prem
-            - name: Authentication
+            - name: AuthenticationGatewayFilterFactory
               args:
                 authenticationEnabled: true
-            - name: Authorization
+            - name: AuthenticationGatewayFilterFactory
               args:
                 allowedRoles: ADMIN,SUPER_ADMIN
 eureka:
